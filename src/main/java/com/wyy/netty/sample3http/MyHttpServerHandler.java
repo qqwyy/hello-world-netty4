@@ -1,17 +1,11 @@
-package com.wyy.netty.sample2http;
+package com.wyy.netty.sample3http;
 
 
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_LENGTH;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
-import static io.netty.handler.codec.http.HttpResponseStatus.BAD_REQUEST;
-import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
-
-import java.io.File;
-import java.io.IOException;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.*;
@@ -19,6 +13,7 @@ import io.netty.util.CharsetUtil;
 
 public class MyHttpServerHandler extends SimpleChannelInboundHandler<HttpObject> {
 
+    @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
         if (msg instanceof HttpRequest) {
             System.out.println("URL:"+((HttpRequest) msg).getUri().toString() +"   method："+((HttpRequest) msg).getMethod().name());

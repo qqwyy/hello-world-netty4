@@ -1,24 +1,20 @@
-package com.wyy.netty.sample1socket;
+package com.wyy.netty.sample2chatsocket;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
 
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 
-public class MySocketServer {
+public class MyChatServer {
 
     private int port;
 
-    public MySocketServer(int port) {
+    public MyChatServer(int port) {
         this.port = port;
     }
 
@@ -29,9 +25,8 @@ public class MySocketServer {
             ServerBootstrap sbs = new ServerBootstrap().group(bossGroup,workerGroup).channel(NioServerSocketChannel.class).localAddress(new InetSocketAddress(port))
                     .option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true)
-                    .childHandler(new MySocketServerInitializer());
+                    .childHandler(new MyChatServerInitializer());
 
-            // 绑定端口，开始接收进来的连接
             ChannelFuture future = sbs.bind(port).sync();
             System.out.println("Server start listen at " + port +"    "+ Charset.defaultCharset());
             future.channel().closeFuture().sync();
@@ -48,6 +43,6 @@ public class MySocketServer {
         } else {
             port = 8080;
         }
-        new MySocketServer(port).start();
+        new MyChatServer(port).start();
     }
 }
