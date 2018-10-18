@@ -1,0 +1,12 @@
+.idea
+.gradle
+.classpath
+.project
+.settings
+
+*.iml
+build/
+bin/
+test-output
+out/
+sh.exe.stackdump
