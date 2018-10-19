@@ -1,4 +1,4 @@
-package com.wyy.netty.sample1socket;
+package com.wyy.netty.demo1socket;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

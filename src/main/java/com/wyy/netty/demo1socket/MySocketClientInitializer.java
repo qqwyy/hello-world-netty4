@@ -1,11 +1,11 @@
-package com.wyy.netty.sample1socket;
+package com.wyy.netty.demo1socket;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
-public class MySocketServerInitializer extends ChannelInitializer<SocketChannel> {
+public class MySocketClientInitializer extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
 //      ch.pipeline().addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));

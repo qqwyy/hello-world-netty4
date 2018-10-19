@@ -1,4 +1,4 @@
-package com.wyy.netty.sample3http;
+package com.wyy.netty.demo3http;
 
 
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_LENGTH;

@@ -1,4 +1,4 @@
-package com.wyy.netty.sample2chatsocket;
+package com.wyy.netty.demo2chatsocket;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;

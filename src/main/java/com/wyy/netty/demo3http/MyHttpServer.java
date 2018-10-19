@@ -1,4 +1,4 @@
-package com.wyy.netty.sample3http;
+package com.wyy.netty.demo3http;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
